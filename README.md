@@ -1,6 +1,6 @@
 # discord-command-controls
 
-![CI](https://github.com/vuguul/discord-command-controls/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/valaksi/discord-command-controls/actions/workflows/ci.yml/badge.svg)
 ![MIT License](https://img.shields.io/badge/license-MIT-8fe3c7)
 
 Reusable command catalog and policy helpers for Discord bots and admin dashboards.
@@ -27,6 +27,12 @@ npm install
 npm test
 npm run typecheck
 ```
+
+## Maintenance
+
+- Keep command metadata and policy targets in sync.
+- Add tests when command policy behavior changes.
+- Do not commit Discord tokens, guild IDs from private servers, webhook URLs, or dashboard secrets.
 
 ## Why this exists
 
