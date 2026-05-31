@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: Security policy
-    url: https://github.com/valaksi/discord-command-controls/security/policy
+    url: https://github.com/vaguul/discord-command-controls/security/policy
     about: Please report suspected vulnerabilities through the security policy.

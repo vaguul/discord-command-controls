@@ -1,6 +1,6 @@
 # discord-command-controls
 
-![CI](https://github.com/valaksi/discord-command-controls/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/vaguul/discord-command-controls/actions/workflows/ci.yml/badge.svg)
 ![MIT License](https://img.shields.io/badge/license-MIT-8fe3c7)
 
 Reusable command catalog and policy helpers for Discord bots and admin dashboards, maintained by Vaguul under the Zemiax personal software studio.
