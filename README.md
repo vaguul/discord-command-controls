@@ -15,6 +15,38 @@ This package extracts the command enable/disable and allow/deny policy logic int
 - channel allow/deny lists
 - helpers to round-trip policy state through dashboard config JSON
 
+## Dashboard config fixture
+
+Use stable IDs from your own app. Do not paste live Discord tokens, webhook URLs, or private guild IDs into fixtures.
+
+```json
+{
+  "commandControls": {
+    "ban": true,
+    "warn": false,
+    "spotify": true
+  },
+  "commandPolicies": {
+    "ban": {
+      "enabled": true,
+      "allowedRoleIds": ["staff-role-id"],
+      "deniedRoleIds": ["muted-role-id"],
+      "allowedChannelIds": ["mod-channel-id"],
+      "deniedChannelIds": ["general-channel-id"]
+    },
+    "spotify.play": {
+      "enabled": false,
+      "allowedRoleIds": ["dj-role-id"],
+      "deniedRoleIds": [],
+      "allowedChannelIds": ["music-channel-id"],
+      "deniedChannelIds": []
+    }
+  }
+}
+```
+
+`resolveCommandControlsFromDashboardConfig(config)` returns the root command mirrors used by simple dashboards. `resolveCommandPoliciesFromDashboardConfig(config)` returns root and subcommand policy targets for full policy editors.
+
 ## Install
 
 ```bash
