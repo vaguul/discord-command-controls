@@ -2,6 +2,13 @@
 
 All notable project changes are tracked here.
 
+## 0.1.3 - 2026-05-31
+
+- Added dashboard config fixture documentation.
+- Added generated command catalog documentation.
+- Added `npm run docs:catalog` for regenerating command catalog docs from source.
+- Migrated public repository namespace references to `vaguul`.
+
 ## 0.1.2 - 2026-05-31
 
 - Added maintainer workflow documentation and public roadmap.
