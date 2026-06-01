@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   evaluateCommandPolicy,
   filterSupportedCommandControls,
@@ -11,6 +12,8 @@ import {
   writeCommandControlsToDashboardConfig,
   writeCommandPoliciesToDashboardConfig
 } from "../src/index.ts";
+
+const dashboardFixture = JSON.parse(readFileSync(new URL("../docs/dashboard-config.fixture.json", import.meta.url), "utf8"));
 
 test("filterSupportedCommandControls defaults unknown commands and keeps catalog commands", () => {
   const controls = filterSupportedCommandControls({
@@ -88,6 +91,39 @@ test("evaluateCommandPolicy enforces deny and allow lists", () => {
     }).reason,
     "allowed"
   );
+});
+
+test("dashboard role override fixture covers enabled, disabled, and role-required states", () => {
+  const policies = resolveCommandPoliciesFromDashboardConfig(dashboardFixture);
+
+  assert.equal(policies.ban.enabled, true);
+  assert.deepEqual(policies.ban.allowedRoleIds, ["role-staff"]);
+  assert.equal(
+    evaluateCommandPolicy(policies.ban, {
+      channelId: "channel-mod-log",
+      roleIds: []
+    }).reason,
+    "role_not_allowed"
+  );
+  assert.equal(
+    evaluateCommandPolicy(policies.ban, {
+      channelId: "channel-mod-log",
+      roleIds: ["role-staff"]
+    }).reason,
+    "allowed"
+  );
+
+  assert.equal(policies.warn.enabled, false);
+  assert.equal(
+    evaluateCommandPolicy(policies.warn, {
+      channelId: "channel-support",
+      roleIds: ["role-helper"]
+    }).reason,
+    "disabled"
+  );
+
+  assert.equal(policies["spotify.play"].enabled, false);
+  assert.deepEqual(policies["spotify.play"].allowedRoleIds, ["role-dj"]);
 });
 
 test("evaluateCommandPolicy keeps deny checks ahead of allow-list checks", () => {

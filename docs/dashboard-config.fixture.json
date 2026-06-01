@@ -1,7 +1,7 @@
 {
   "commandControls": {
     "ban": true,
-    "warn": true,
+    "warn": false,
     "help": true
   },
   "commandPolicies": {
@@ -13,10 +13,17 @@
       "deniedChannelIds": ["channel-general"]
     },
     "warn": {
-      "enabled": true,
-      "allowedRoleIds": ["role-staff", "role-helper"],
+      "enabled": false,
+      "allowedRoleIds": [],
       "deniedRoleIds": [],
-      "allowedChannelIds": ["channel-mod-log", "channel-support"],
+      "allowedChannelIds": [],
+      "deniedChannelIds": []
+    },
+    "spotify.play": {
+      "enabled": false,
+      "allowedRoleIds": ["role-dj"],
+      "deniedRoleIds": [],
+      "allowedChannelIds": ["channel-music"],
       "deniedChannelIds": []
     },
     "help": {

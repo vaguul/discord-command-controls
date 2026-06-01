@@ -36,6 +36,13 @@ The copy-paste fixture lives at [docs/dashboard-config.fixture.json](docs/dashbo
       "allowedChannelIds": ["mod-channel-id"],
       "deniedChannelIds": ["general-channel-id"]
     },
+    "warn": {
+      "enabled": false,
+      "allowedRoleIds": [],
+      "deniedRoleIds": [],
+      "allowedChannelIds": [],
+      "deniedChannelIds": []
+    },
     "spotify.play": {
       "enabled": false,
       "allowedRoleIds": ["dj-role-id"],
@@ -48,6 +55,12 @@ The copy-paste fixture lives at [docs/dashboard-config.fixture.json](docs/dashbo
 ```
 
 `resolveCommandControlsFromDashboardConfig(config)` returns the root command mirrors used by simple dashboards. `resolveCommandPoliciesFromDashboardConfig(config)` returns root and subcommand policy targets for full policy editors.
+
+The fixture intentionally covers three common dashboard states:
+
+- `ban` is enabled but requires a staff role.
+- `warn` is disabled at the root command level.
+- `spotify.play` is a disabled subcommand override that stays independent from the root `spotify` switch.
 
 ## Command catalog
 
