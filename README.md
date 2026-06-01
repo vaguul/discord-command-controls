@@ -62,6 +62,8 @@ The fixture intentionally covers three common dashboard states:
 - `warn` is disabled at the root command level.
 - `spotify.play` is a disabled subcommand override that stays independent from the root `spotify` switch.
 
+More framework-neutral examples live in [docs/dashboard-policy-examples.md](docs/dashboard-policy-examples.md).
+
 ## Command catalog
 
 The generated command table lives in [docs/command-catalog.md](docs/command-catalog.md). Regenerate it after catalog changes:
