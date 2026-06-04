@@ -2,6 +2,19 @@
 
 All notable project changes are tracked here.
 
+## 0.1.5 - 2026-06-04
+
+- Changed package exports to compiled `dist` files for real package consumption.
+- Added a build-specific TypeScript config for distributable output.
+- Added `build`, `prepare`, and `prepack` scripts.
+- Added package `types` metadata and documented GitHub release tag installation.
+
+## 0.1.4 - 2026-06-02
+
+- Added role override fixture coverage.
+- Added dashboard policy examples.
+- Published the latest public package release.
+
 ## 0.1.3 - 2026-05-31
 
 - Added dashboard config fixture documentation.

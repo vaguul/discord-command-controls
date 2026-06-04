@@ -1,6 +1,6 @@
 {
   "name": "discord-command-controls",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Zemiax TypeScript helpers for Discord command catalogs, toggles, and dashboard policies.",
   "type": "module",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "sideEffects": false,
   "files": [
     "docs",
-    "src",
+    "dist",
     "README.md",
     "LICENSE"
   ],
@@ -25,13 +25,17 @@
     "dashboard"
   ],
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./dist/index.js"
   },
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
     "docs:catalog": "tsx scripts/generate-command-catalog-doc.ts",
     "validate": "npm run typecheck && npm test",
     "test": "tsx --test tests/**/*.test.ts",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepare": "npm run build",
+    "prepack": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^25.9.1",

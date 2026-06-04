@@ -74,6 +74,14 @@ npm run docs:catalog
 
 ## Install
 
+Install from a GitHub release tag:
+
+```bash
+npm install github:vaguul/discord-command-controls#v0.1.5
+```
+
+Local development:
+
 ```bash
 npm install
 ```
