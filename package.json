@@ -1,10 +1,10 @@
 {
   "name": "discord-command-controls",
   "version": "0.1.5",
-  "description": "Zemiax TypeScript helpers for Discord command catalogs, toggles, and dashboard policies.",
+  "description": "TypeScript helpers for Discord command catalogs, toggles, and dashboard policies.",
   "type": "module",
   "license": "MIT",
-  "author": "Vaguul (Zemiax)",
+  "author": "Vaguul",
   "sideEffects": false,
   "files": [
     "docs",
